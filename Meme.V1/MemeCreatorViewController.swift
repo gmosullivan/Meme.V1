@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCreatorViewController: UIViewController {
+class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Outlets
     
@@ -33,6 +33,8 @@ class MemeCreatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.topTextField.delegate = self
+        self.bottomTextField.delegate = self
         topTextField.text = "TOP"
         topTextField.textAlignment = .center
         topTextField.defaultTextAttributes = memeTextAttributes
@@ -63,6 +65,12 @@ class MemeCreatorViewController: UIViewController {
     
     @IBAction func takePhoto() {
         print("Take a Photo!")
+    }
+    
+    //MARK: - Text Field Delegates
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
     }
     
 }
