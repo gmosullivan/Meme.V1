@@ -35,9 +35,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-59-K32">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-59-K32">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Choose" id="8gL-dz-yA1">
                                         <connections>
@@ -52,17 +51,28 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C5C-3D-mXx">
+                                <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="C5C-3D-mXx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0ei-FB-jkq" userLabel="Image View.leading = View.leading"/>
                             <constraint firstItem="qmf-xK-8qj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7zI-WW-gZJ"/>
-                            <constraint firstItem="qmf-xK-8qj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ehd-vG-zK2"/>
-                            <constraint firstItem="qmf-xK-8qj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I1O-Aw-ZCv"/>
+                            <constraint firstItem="Abt-59-K32" firstAttribute="top" secondItem="C5C-3D-mXx" secondAttribute="bottom" id="8N3-RD-X7N"/>
+                            <constraint firstItem="qmf-xK-8qj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ehd-vG-zK2" userLabel="Nav Bar.trailing = View.trailing"/>
+                            <constraint firstItem="qmf-xK-8qj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I1O-Aw-ZCv" userLabel="Nav Bar.leading = View.leading"/>
+                            <constraint firstItem="C5C-3D-mXx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XHE-u9-zuQ" userLabel="Image View.trailing = View.trailing"/>
+                            <constraint firstItem="Abt-59-K32" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c8R-0h-n1u" userLabel="Toolbar.leading = View.leading"/>
+                            <constraint firstItem="Abt-59-K32" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="emu-Kv-v0b" userLabel="Toolbar.bottom = View.bottom"/>
+                            <constraint firstItem="Abt-59-K32" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lga-dR-eqS" userLabel="Toolbar.trailing = View.trailing"/>
+                            <constraint firstItem="C5C-3D-mXx" firstAttribute="top" secondItem="qmf-xK-8qj" secondAttribute="bottom" id="nRK-Yb-Mf0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="JAs-xW-lxB" id="ok8-i7-iuy"/>
+                        <outlet property="imageForMeme" destination="C5C-3D-mXx" id="MQu-Da-2MQ"/>
                         <outlet property="navBar" destination="qmf-xK-8qj" id="5ae-b5-Ise"/>
                         <outlet property="shareButton" destination="uif-2i-hXd" id="CAS-Yi-7ce"/>
                         <outlet property="toolbar" destination="Abt-59-K32" id="ZBC-hZ-gfN"/>
