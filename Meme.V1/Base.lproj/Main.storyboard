@@ -35,6 +35,17 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-59-K32">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Choose" id="8gL-dz-yA1">
+                                        <connections>
+                                            <action selector="chooseImage" destination="BYZ-38-t0r" id="ecO-Zu-D8X"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -47,10 +58,12 @@
                     <connections>
                         <outlet property="navBar" destination="qmf-xK-8qj" id="5ae-b5-Ise"/>
                         <outlet property="shareButton" destination="uif-2i-hXd" id="CAS-Yi-7ce"/>
+                        <outlet property="toolbar" destination="Abt-59-K32" id="ZBC-hZ-gfN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>

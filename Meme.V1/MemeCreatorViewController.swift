@@ -13,6 +13,7 @@ class MemeCreatorViewController: UIViewController {
     //MARK: - Outlets
     
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var shareButton: UIButton!
     
     //MARK: - Application Life Cycle
@@ -34,6 +35,10 @@ class MemeCreatorViewController: UIViewController {
     
     @IBAction func shareMeme() {
         print("Share Meme!")
+    }
+    
+    @IBAction func chooseImage() {
+        print("Choose Image!")
     }
     
 }
