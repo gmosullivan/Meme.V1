@@ -20,10 +20,25 @@ class MemeCreatorViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    //MARK: - Text Attributes
+    
+    let memeTextAttributes:[String: Any] = [
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+        NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedStringKey.strokeWidth.rawValue: 3.0
+    ]
+    
     //MARK: - Application Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        topTextField.text = "TOP"
+        topTextField.textAlignment = .center
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.text = "BOTTOM"
+        bottomTextField.textAlignment = .center
+        bottomTextField.defaultTextAttributes = memeTextAttributes
     }
     
     override func viewWillAppear(_ animated: Bool) {
