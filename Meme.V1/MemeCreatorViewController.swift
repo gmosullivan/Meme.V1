@@ -47,6 +47,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(true)
         shareButton.isEnabled = false //Disables the share button until user has created meme
         cameraButton.isEnabled = false //Set to disabled until we add the image picker controller
+        subscribeToKeyboardNotifications()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,7 +82,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    //MARK: - Notification functions
+    //MARK: - Notification Functions
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         let userInfo = notification.userInfo
@@ -95,6 +96,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y += getKeyboardHeight(notification)
+    }
+    
+    //MARK: - Subscription Functions
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
 }
