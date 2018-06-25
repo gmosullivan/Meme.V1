@@ -14,6 +14,8 @@ class MemeCreatorViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageForMeme:UIImageView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
