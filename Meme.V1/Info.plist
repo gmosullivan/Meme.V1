@@ -28,6 +28,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This app allows you to create memes from your photos. Please allow access to your camera.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app allows you to create memes from your photos. Please allow access to your photo library.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app allows you to create memes from your photos. Please allow access to your photo library.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
