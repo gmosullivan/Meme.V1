@@ -52,6 +52,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        unsubscribeToKeyboardNotifications()    
     }
 
     //MARK: - Button Actions
@@ -103,6 +104,11 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeToKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
 }
