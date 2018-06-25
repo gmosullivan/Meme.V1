@@ -21,7 +21,18 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmf-xK-8qj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Meme" id="c6o-KN-sce"/>
+                                    <navigationItem title="Meme" id="c6o-KN-sce">
+                                        <barButtonItem key="rightBarButtonItem" title="Share" style="plain" id="gnX-V9-rMy">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uif-2i-hXd">
+                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Share"/>
+                                                <connections>
+                                                    <action selector="shareMeme" destination="BYZ-38-t0r" eventType="touchUpInside" id="nAs-EI-yNJ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -35,6 +46,7 @@
                     </view>
                     <connections>
                         <outlet property="navBar" destination="qmf-xK-8qj" id="5ae-b5-Ise"/>
+                        <outlet property="shareButton" destination="uif-2i-hXd" id="CAS-Yi-7ce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

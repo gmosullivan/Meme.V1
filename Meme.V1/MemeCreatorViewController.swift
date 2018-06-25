@@ -13,6 +13,7 @@ class MemeCreatorViewController: UIViewController {
     //MARK: - Outlets
     
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var shareButton: UIButton!
     
     //MARK: - Application Life Cycle
 
@@ -22,11 +23,18 @@ class MemeCreatorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        shareButton.isEnabled = false //Disables the share button until user has created meme
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     }
 
+    //MARK: - Button Actions
+    
+    @IBAction func shareMeme() {
+        print("Share Meme!")
+    }
+    
 }
 
