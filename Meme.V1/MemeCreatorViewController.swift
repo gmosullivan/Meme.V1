@@ -81,5 +81,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    //MARK: - Notification functions
+    
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
 }
 
