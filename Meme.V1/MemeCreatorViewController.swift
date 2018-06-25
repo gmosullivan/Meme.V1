@@ -10,6 +10,10 @@ import UIKit
 
 class MemeCreatorViewController: UIViewController {
     
+    //MARK: - Outlets
+    
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     //MARK: - Application Life Cycle
 
     override func viewDidLoad() {
