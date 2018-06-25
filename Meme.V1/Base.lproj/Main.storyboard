@@ -44,6 +44,12 @@
                                             <action selector="chooseImage" destination="BYZ-38-t0r" id="ecO-Zu-D8X"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="256" style="plain" systemItem="fixedSpace" id="8K1-i5-KdA"/>
+                                    <barButtonItem systemItem="camera" id="JAs-xW-lxB">
+                                        <connections>
+                                            <action selector="takePhoto" destination="BYZ-38-t0r" id="8lc-Yv-6ii"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -56,6 +62,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="JAs-xW-lxB" id="ok8-i7-iuy"/>
                         <outlet property="navBar" destination="qmf-xK-8qj" id="5ae-b5-Ise"/>
                         <outlet property="shareButton" destination="uif-2i-hXd" id="CAS-Yi-7ce"/>
                         <outlet property="toolbar" destination="Abt-59-K32" id="ZBC-hZ-gfN"/>

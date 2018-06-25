@@ -15,6 +15,7 @@ class MemeCreatorViewController: UIViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     //MARK: - Application Life Cycle
 
@@ -25,6 +26,7 @@ class MemeCreatorViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         shareButton.isEnabled = false //Disables the share button until user has created meme
+        cameraButton.isEnabled = false //Set to disabled until we add the image picker controller
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,6 +41,10 @@ class MemeCreatorViewController: UIViewController {
     
     @IBAction func chooseImage() {
         print("Choose Image!")
+    }
+    
+    @IBAction func takePhoto() {
+        print("Take a Photo!")
     }
     
 }
