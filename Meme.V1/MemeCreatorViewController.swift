@@ -73,5 +73,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
         textField.text = ""
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if bottomTextField.text != "" && topTextField.text != "" {
+            shareButton.isEnabled = true
+        } // Checks to see if share button can be enabled
+        return true
+    }
+    
 }
 
