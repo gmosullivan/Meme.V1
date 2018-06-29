@@ -20,6 +20,17 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    //MARK: - Memed image
+    
+    var memedImage: UIImage?
+    
+    struct Meme {
+        let topText: String
+        let bottomText: String
+        let originalImage: UIImage
+        var memedImage: UIImage
+    }
+    
     //MARK: - Text Attributes
     
     let memeTextAttributes:[String: Any] = [
