@@ -69,10 +69,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     }
     
     @IBAction func takePhoto() {
-        print("Take a Photo!")
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
     }
     
-    //MARK: - Text Field Delegates
+    //MARK: - Text Field Delegate Functions
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
@@ -84,6 +87,12 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
             shareButton.isEnabled = true
         } // Checks to see if share button can be enabled
         return true
+    }
+    
+    //MARK: - Image Picker Delegate Functions
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: - Notification Functions
