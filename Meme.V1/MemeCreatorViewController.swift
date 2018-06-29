@@ -145,6 +145,20 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
+    //MARK: - Generating Meme
+    
+    func generateMemedImage() -> UIImage {
+        navBar.isHidden = true
+        toolbar.isHidden = true
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let generatedMeme = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        navBar.isHidden = false
+        toolbar.isHidden = false
+        return generatedMeme
+    }
+    
     //MARK: - Saving Meme
     
     func save() {
