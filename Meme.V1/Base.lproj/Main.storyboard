@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Meme" id="c6o-KN-sce">
-                                        <barButtonItem key="rightBarButtonItem" title="Share" style="plain" id="gnX-V9-rMy">
+                                        <barButtonItem key="rightBarButtonItem" title="Share" id="gnX-V9-rMy">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uif-2i-hXd">
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
