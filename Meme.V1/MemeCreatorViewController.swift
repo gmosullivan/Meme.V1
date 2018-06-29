@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
+class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: - Outlets
     
@@ -62,7 +62,10 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func chooseImage() {
-        print("Choose Image!")
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func takePhoto() {
