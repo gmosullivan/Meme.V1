@@ -145,5 +145,11 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
+    //MARK: - Saving Meme
+    
+    func save() {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageForMeme.image!, memedImage: memedImage!)
+    }
+    
 }
 
