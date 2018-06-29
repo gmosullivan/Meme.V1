@@ -26,7 +26,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
         NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
         NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedStringKey.strokeWidth.rawValue: 3.0
+        NSAttributedStringKey.strokeWidth.rawValue: -3.0
     ]
     
     //MARK: - Application Life Cycle
