@@ -107,6 +107,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        textField.sizeToFit()
         if textAmended && imageSelected {
             shareButton.isEnabled = true
         } // Checks to see if share button can be enabled
@@ -187,6 +188,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     func configureTextField(_ textField: UITextField) {
         textField.textAlignment = .center
         textField.defaultTextAttributes = memeTextAttributes
+        textField.adjustsFontSizeToFitWidth = true
     }
     
 }
