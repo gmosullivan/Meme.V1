@@ -49,11 +49,9 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
         topTextField.text = "TOP"
-        topTextField.textAlignment = .center
-        topTextField.defaultTextAttributes = memeTextAttributes
+        configureTextField(topTextField)
         bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = .center
-        bottomTextField.defaultTextAttributes = memeTextAttributes
+        configureTextField(bottomTextField)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -182,6 +180,13 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageForMeme.image!, memedImage: memedImage!)
+    }
+    
+    //MARK: - Configure Text Function
+    
+    func configureTextField(_ textField: UITextField) {
+        textField.textAlignment = .center
+        textField.defaultTextAttributes = memeTextAttributes
     }
     
 }
