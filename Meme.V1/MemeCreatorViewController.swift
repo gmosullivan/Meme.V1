@@ -57,7 +57,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         shareButton.isEnabled = false //Disables the share button until user has created meme
-        cameraButton.isEnabled = false //Set to disabled until we add the image picker controller
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera) // Disables camera button if no camera
         subscribeToKeyboardNotifications()
     }
 
