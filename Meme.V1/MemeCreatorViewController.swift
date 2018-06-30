@@ -181,8 +181,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     //MARK: - Configure Text Function
     
     func configureTextField(_ textField: UITextField, withText: String) {
-        textField.textAlignment = .center
         textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
         textField.adjustsFontSizeToFitWidth = true
     }
     
