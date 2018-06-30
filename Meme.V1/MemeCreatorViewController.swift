@@ -48,10 +48,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
         super.viewDidLoad()
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
-        topTextField.text = "TOP"
-        configureTextField(topTextField)
-        bottomTextField.text = "BOTTOM"
-        configureTextField(bottomTextField)
+        configureTextField(topTextField, withText: "Top")
+        configureTextField(bottomTextField, withText: "Bottom")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -185,7 +183,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     //MARK: - Configure Text Function
     
-    func configureTextField(_ textField: UITextField) {
+    func configureTextField(_ textField: UITextField, withText: String) {
         textField.textAlignment = .center
         textField.defaultTextAttributes = memeTextAttributes
         textField.adjustsFontSizeToFitWidth = true
