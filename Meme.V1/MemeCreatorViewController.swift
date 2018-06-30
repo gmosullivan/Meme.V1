@@ -24,7 +24,6 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     var memedImage: UIImage?
     var imageSelected = false
-    var textAmended = false
     
     struct Meme {
         let topText: String
@@ -100,14 +99,12 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
-        textAmended = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         textField.sizeToFit()
-        if textAmended && imageSelected {
-            shareButton.isEnabled = true
+        if imageSelected {
         } // Checks to see if share button can be enabled
         return true
     }
@@ -119,7 +116,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
             imageSelected = true
             imageForMeme.image = image
         }
-        if imageSelected && textAmended {
+        if imageSelected {
             shareButton.isEnabled = true
         } // Checks to see if share button can be enabled
         dismiss(animated: true, completion: nil)
