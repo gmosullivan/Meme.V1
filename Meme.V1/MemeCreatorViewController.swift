@@ -47,8 +47,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
         super.viewDidLoad()
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
-        configureTextField(topTextField, withText: "Top")
-        configureTextField(bottomTextField, withText: "Bottom")
+        configureTextField(topTextField, withText: "TOP")
+        configureTextField(bottomTextField, withText: "BOTTOM")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,9 +103,6 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        textField.sizeToFit()
-        if imageSelected {
-        } // Checks to see if share button can be enabled
         return true
     }
     
@@ -183,6 +180,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     func configureTextField(_ textField: UITextField, withText: String) {
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
+        textField.text = withText
         textField.adjustsFontSizeToFitWidth = true
     }
     

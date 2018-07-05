@@ -55,14 +55,14 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="579"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="6Sa-OW-xvy">
-                                <rect key="frame" x="183.5" y="89" width="8" height="17"/>
+                                <rect key="frame" x="20" y="89" width="335" height="17"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcv-d4-0pA">
-                                <rect key="frame" x="183.5" y="561" width="8" height="17"/>
+                                <rect key="frame" x="20" y="561" width="335" height="17"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -76,8 +76,11 @@
                             <constraint firstItem="qmf-xK-8qj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7zI-WW-gZJ"/>
                             <constraint firstItem="6Sa-OW-xvy" firstAttribute="top" secondItem="qmf-xK-8qj" secondAttribute="bottom" constant="45" id="8CB-YC-V6s" userLabel="Top Text Field.top = Image View.top + 5"/>
                             <constraint firstItem="Abt-59-K32" firstAttribute="top" secondItem="C5C-3D-mXx" secondAttribute="bottom" id="8N3-RD-X7N"/>
+                            <constraint firstItem="6Sa-OW-xvy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Dgt-8q-CJa"/>
                             <constraint firstItem="qmf-xK-8qj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ehd-vG-zK2" userLabel="Nav Bar.trailing = View.trailing"/>
                             <constraint firstItem="qmf-xK-8qj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I1O-Aw-ZCv" userLabel="Nav Bar.leading = View.leading"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Sa-OW-xvy" secondAttribute="trailing" constant="20" id="VtX-LQ-gLB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vcv-d4-0pA" secondAttribute="trailing" constant="20" id="Wfs-Wf-P4N"/>
                             <constraint firstItem="C5C-3D-mXx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XHE-u9-zuQ" userLabel="Image View.trailing = View.trailing"/>
                             <constraint firstItem="vcv-d4-0pA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YDh-v6-rl3"/>
                             <constraint firstItem="Abt-59-K32" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c8R-0h-n1u" userLabel="Toolbar.leading = View.leading"/>
@@ -85,6 +88,7 @@
                             <constraint firstItem="6Sa-OW-xvy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g6K-GJ-Hg0"/>
                             <constraint firstItem="Abt-59-K32" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lga-dR-eqS" userLabel="Toolbar.trailing = View.trailing"/>
                             <constraint firstItem="C5C-3D-mXx" firstAttribute="top" secondItem="qmf-xK-8qj" secondAttribute="bottom" id="nRK-Yb-Mf0"/>
+                            <constraint firstItem="vcv-d4-0pA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oQh-i8-gyX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
