@@ -17,13 +17,12 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageForMeme:UIImageView!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     //MARK: - Memed image
     
     var memedImage: UIImage?
-    var imageSelected = false
     
     struct Meme {
         let topText: String
@@ -82,17 +81,11 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     }
     
     @IBAction func chooseImage() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        presentImagePickerWith(sourceType: .photoLibrary)
     }
     
     @IBAction func takePhoto() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        presentImagePickerWith(sourceType: .camera)
     }
     
     //MARK: - Text Field Delegate Functions
@@ -110,17 +103,23 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageSelected = true
             imageForMeme.image = image
-        }
-        if imageSelected {
             shareButton.isEnabled = true
-        } // Checks to see if share button can be enabled
+        }
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: - Present Image Picker
+    
+    func presentImagePickerWith(sourceType: UIImagePickerControllerSourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
     }
     
     //MARK: - Notification Functions

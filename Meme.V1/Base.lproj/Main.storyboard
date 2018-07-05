@@ -88,6 +88,7 @@
                         <outlet property="cameraButton" destination="JAs-xW-lxB" id="ok8-i7-iuy"/>
                         <outlet property="imageForMeme" destination="C5C-3D-mXx" id="MQu-Da-2MQ"/>
                         <outlet property="navBar" destination="qmf-xK-8qj" id="5ae-b5-Ise"/>
+                        <outlet property="shareButton" destination="gnX-V9-rMy" id="ocS-xb-M4k"/>
                         <outlet property="toolbar" destination="Abt-59-K32" id="ZBC-hZ-gfN"/>
                         <outlet property="topTextField" destination="6Sa-OW-xvy" id="nxs-i7-q5b"/>
                     </connections>
