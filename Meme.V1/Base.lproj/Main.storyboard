@@ -22,7 +22,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Meme" id="c6o-KN-sce">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="gnX-V9-rMy"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="gnX-V9-rMy">
+                                            <connections>
+                                                <action selector="shareMeme" destination="BYZ-38-t0r" id="J5F-4B-YyV"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

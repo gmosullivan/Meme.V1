@@ -52,8 +52,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        shareButton.isEnabled = false //Disables the share button until user has created meme
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera) // Disables camera button if no camera
+        shareButton.isEnabled = false //Disables the share button until user has created meme
         subscribeToKeyboardNotifications()
     }
 
@@ -133,13 +133,11 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isEditing {
             view.frame.origin.y = -1 * getKeyboardHeight(notification)
-            toolbar.isHidden = true
         }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
-        toolbar.isHidden = false
     }
     
     //MARK: - Subscription Functions
@@ -157,14 +155,12 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     //MARK: - Generating Meme
     
     func generateMemedImage() -> UIImage {
-        navBar.isHidden = true
-        toolbar.isHidden = true
+        hideBars(true)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let generatedMeme = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        navBar.isHidden = false
-        toolbar.isHidden = false
+        hideBars(false)
         return generatedMeme
     }
     
@@ -174,13 +170,18 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageForMeme.image!, memedImage: memedImage!)
     }
     
-    //MARK: - Configure Text Function
+    //MARK: - Configure Text Field Functions
     
     func configureTextField(_ textField: UITextField, withText: String) {
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
         textField.text = withText
         textField.adjustsFontSizeToFitWidth = true
+    }
+    
+    func hideBars(_ hidden: Bool ) {
+        navBar.isHidden = hidden
+        toolbar.isHidden = hidden
     }
     
 }
