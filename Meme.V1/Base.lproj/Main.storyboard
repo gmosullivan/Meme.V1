@@ -22,16 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Meme" id="c6o-KN-sce">
-                                        <barButtonItem key="rightBarButtonItem" title="Share" id="gnX-V9-rMy">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uif-2i-hXd">
-                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Share"/>
-                                                <connections>
-                                                    <action selector="shareMeme" destination="BYZ-38-t0r" eventType="touchUpInside" id="nAs-EI-yNJ"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="gnX-V9-rMy"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -97,7 +88,6 @@
                         <outlet property="cameraButton" destination="JAs-xW-lxB" id="ok8-i7-iuy"/>
                         <outlet property="imageForMeme" destination="C5C-3D-mXx" id="MQu-Da-2MQ"/>
                         <outlet property="navBar" destination="qmf-xK-8qj" id="5ae-b5-Ise"/>
-                        <outlet property="shareButton" destination="uif-2i-hXd" id="CAS-Yi-7ce"/>
                         <outlet property="toolbar" destination="Abt-59-K32" id="ZBC-hZ-gfN"/>
                         <outlet property="topTextField" destination="6Sa-OW-xvy" id="nxs-i7-q5b"/>
                     </connections>
