@@ -45,8 +45,8 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.topTextField.delegate = self
-        self.bottomTextField.delegate = self
+        topTextField.delegate = self
+        bottomTextField.delegate = self
         configureTextField(topTextField, withText: "TOP")
         configureTextField(bottomTextField, withText: "BOTTOM")
     }
