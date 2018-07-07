@@ -23,6 +23,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     //MARK: - Memed image
     
     var memedImage: UIImage?
+    var imageSelected = false
     
     struct Meme {
         let topText: String
@@ -53,7 +54,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera) // Disables camera button if no camera
-        shareButton.isEnabled = false //Disables the share button until user has created meme
+        shareButton.isEnabled = imageSelected
         subscribeToKeyboardNotifications()
     }
 
@@ -104,7 +105,7 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageForMeme.image = image
-            shareButton.isEnabled = true
+            imageSelected = true
         }
         dismiss(animated: true, completion: nil)
     }
