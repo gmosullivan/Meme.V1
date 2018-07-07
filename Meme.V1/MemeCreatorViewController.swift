@@ -52,14 +52,14 @@ class MemeCreatorViewController: UIViewController, UITextFieldDelegate, UIImageP
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera) // Disables camera button if no camera
         shareButton.isEnabled = imageSelected
         subscribeToKeyboardNotifications()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
         unsubscribeToKeyboardNotifications()
     }
 
